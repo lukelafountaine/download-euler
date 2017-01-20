@@ -45,14 +45,14 @@ def print_text(element):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 4:
-        print 'Usage ./get_problems.py <file extension> <problem number (ex: 50) or range (ex: 1-10)> <optional: interpreter path>'
+    if len(sys.argv) < 3:
+        print 'Usage ./get-problems.py <file extension>\
+         <problem number (ex: 50) or range (ex: 1-10)> <optional: interpreter path>'
         sys.exit(0)
 
     extension = sys.argv[1]
     if '-' in sys.argv[2]:
-        start, end = sys.argv[2].split('-')
-        start, end = int(start), int(end)
+        start, end = map(int, sys.argv[2].split('-'))
 
     else:
         start, end = int(sys.argv[2]), int(sys.argv[2])
